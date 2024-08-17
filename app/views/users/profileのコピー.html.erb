@@ -1,0 +1,26 @@
+<%= render "shared/switching" %>
+
+<h3>プロフィール</h3>
+
+  <table>
+    <tr>
+      <th>画像</th>
+      <th>名前</th>
+      <th>自己紹介</th>
+    </tr>
+
+    <tr>
+      <% if current_user.profile_image.present? %>
+        <td><%= image_tag current_user.profile_image %></td>
+      <% else %>
+        <td><%= image_tag "icon_avater.png" %></td>
+      <% end %>
+      <td><%= current_user.name %></td>
+      <td><%= current_user.introduction %></td>
+
+    </tr>
+  </table>
+
+  <div>
+    <%= link_to "編集", "/users/edit_profile" %>
+  </div>

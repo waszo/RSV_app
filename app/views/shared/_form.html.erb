@@ -1,0 +1,28 @@
+<%= form_with model: Reservation.new, local: true, url: reservations_confirm_path do |f| %>
+    <div class="card">
+      <div class="card-header">
+        <h5>施設予約入力</h5>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :price, value: @room.price %>
+      </div>
+      <div class="card-body">
+        <div class="form-row">
+          <div class="col">
+            <%= f.label :check_in, "チェックイン" %>
+            <%= f.date_field :check_in, placeholder: "チェックイン", class: "form-control" %>
+          </div>
+          <div class="col">
+            <%= f.label :check_out, "チェックアウト" %>
+            <%= f.date_field :check_out, placeholder: "チェックアウト", class: "form-control" %>
+          </div>
+          <div class="col">
+            <%= f.label :people, "宿泊人数" %>
+            <%= f.number_field :people, placeholder: "人", class: "form-control" %>
+          </div>
+        </div>
+      <br/>
+        <%= f.submit "予約する", id: "btn_book", class: "btn btn-danger btn-block" %>
+      </div>
+    </div>
+  <% end %>
