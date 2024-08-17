@@ -1,0 +1,26 @@
+<%= render "shared/search" %>
+
+<h3>おすすめのエリア</h3>
+
+<div class="d-flex flex-wrap">
+  <div class=RecommendAreas-content>
+    <%= link_to ({controller: "rooms", action: "index",q:{address_cont:"東京"}}) do %>
+    <p class="RecommendAreas-tokyo" %>東京</p>
+    <% end %>
+  </div>
+  <div class=RecommendAreas-content>
+    <%= link_to ({controller: "rooms", action: "index",q:{address_cont:"大阪"}}) do %>
+    <p class="RecommendAreas-osaka">大阪</p>
+    <% end %>
+  </div>
+  <div class=RecommendAreas-content>
+    <%= link_to ({controller: "rooms", action: "index",q:{address_cont:"京都"}}) do %>
+    <p class="RecommendAreas-kyoto">京都</p>
+    <% end %>
+  </div>
+  <div class=RecommendAreas-content>
+    <%= link_to ({controller: "rooms", action: "index",q:{address_cont:"札幌"}}) do %>
+    <p class="RecommendAreas-sapporo">札幌</p>
+    <% end %>
+  </div>
+</div>

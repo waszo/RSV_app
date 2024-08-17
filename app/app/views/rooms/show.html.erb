@@ -1,0 +1,28 @@
+<h3>Room 詳細</h3>
+
+<% if @room.image.attached? %>
+  <%= image_tag @room.image %>
+<% end %>
+
+<table>
+  <tr>
+    <th>名前</th>
+    <td><%= @room.name %></td>
+  </tr>
+  <tr>
+    <th>詳細</th>
+    <td><%= @room.details %></td>
+  </tr>
+  <tr>
+    <th>料金(/日)</th>
+    <td><%= @room.price %>~</td>
+  </tr>
+  <tr>
+    <th>住所</th>
+    <td><%= @room.address %></td>
+  </tr>
+</table>
+
+<%= render "shared/form" %>
+
+<%= link_to "戻る", request.referer || root_path %>

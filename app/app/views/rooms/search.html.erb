@@ -1,0 +1,20 @@
+<h3>検索結果</h3>
+<p>合計件数: <%= @room.count %></p>
+
+
+<% @room.each do |room| %>
+  <%= link_to room_path(room), class: "link_to_font" do %>
+    <div class="room_content">
+      <% if room.image.attached? %>
+        <%= image_tag room.image, class: "room_image" %>
+      <% end %>
+      <div class="room_content_text">
+        <p  class="room_name"><%= room.name%></p>
+        <p  class="room_details"><%= room.details%></p>
+        <p  class="room_price">¥<%= room.price%>/日</p>
+        <p  class="room_address"><%= room.address%></p>
+        <p  class="room_created"><%= room.created_at.strftime("%Y/%m/%d") %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

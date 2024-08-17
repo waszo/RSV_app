@@ -1,0 +1,19 @@
+<%= render "shared/switching" %>
+
+<h3>アカウント</h3>
+
+  <table>
+    <tr>
+      <th>メールアドレス</th>
+      <th>パスワード</th>
+    </tr>
+
+    <tr>
+      <td><%= current_user.email %></td>
+      <td>＊＊＊＊＊＊＊</td>
+    </tr>
+  </table>
+
+  <div>
+    <%= link_to "編集", "/users/edit" %>
+  </div>

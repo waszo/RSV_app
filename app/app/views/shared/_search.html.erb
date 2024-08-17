@@ -1,0 +1,19 @@
+<div class="search_container">
+  <%= search_form_for @search, url: search_rooms_path, method: :get, local: true do |f| %>
+    <div class="search_items1">
+      <%= f.label :name_or_details_cont, "キーワード" %>
+    </div>
+    <div class="search_items1">
+      <%= f.search_field :name_or_details_cont %>
+    </div>
+    <div class="search_items2">
+      <%= f.label :address_cont, "エリア" %>
+    </div>
+    <div class="search_items2">
+      <%= f.search_field :address_cont %>
+    </div>
+    <div class="search_items3">
+      <%= f.submit "検索" %>
+    </div>
+  <% end %>
+</div>
